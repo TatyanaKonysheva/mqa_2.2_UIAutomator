@@ -117,6 +117,8 @@ class ChangeTextTest {
     @Test
     fun testEmptyLine() {
         val packageName = MODEL_PACKAGE
+        waitForPackage(packageName)
+
         val context = ApplicationProvider.getApplicationContext<Context>()
         val intent = context.packageManager.getLaunchIntentForPackage(packageName)
         context.startActivity(intent)
@@ -136,6 +138,8 @@ class ChangeTextTest {
     @Test
     fun testNewActivity() {
         val packageName = MODEL_PACKAGE
+        waitForPackage(packageName)
+
         val context = ApplicationProvider.getApplicationContext<Context>()
         val intent = context.packageManager.getLaunchIntentForPackage(packageName)
         context.startActivity(intent)
